@@ -5,8 +5,6 @@ package.domain = org.test
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas,wav,mp3,ogg
 version = 0.1
-
-# Используем чистый pygame (сборщик выберет совместимый релиз сам)
 requirements = python3,pygame
 
 orientation = landscape
@@ -16,5 +14,4 @@ android.archs = arm64-v8a
 [buildozer]
 log_level = 2
 warn_on_root = 1
-
 
