@@ -3,30 +3,16 @@ on: [push, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Build APK with Buildozer Action
+        uses: ArtemGovorov/buildozer-action@v1
         with:
-          python-version: '3.11'
-
-      - name: Install System Dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libssl-dev cmake libffi-dev libltdl-dev
-
-      - name: Install Buildozer and Cython
-        run: |
-          pip install --user buildozer cython
-
-      - name: Build Android App with Buildozer
-        run: |
-          # Переопределяем домашнюю директорию для корректной работы buildozer под root-правами
-          export HOME=/home/runner
-          buildozer -v android debug
+          command: buildozer -v android debug
+          buildozer_version: stable
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
