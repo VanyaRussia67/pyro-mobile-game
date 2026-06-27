@@ -10,6 +10,11 @@ orientation = landscape
 fullscreen = 1
 android.archs = arm64-v8a
 
+# Фикс ошибки с лицензиями и версией build-tools
+android.accept_sdk_license = True
+android.build_tools_version = 33.0.0
+android.ndk_api = 21
+
 [buildozer]
 log_level = 2
 warn_on_root = 1
