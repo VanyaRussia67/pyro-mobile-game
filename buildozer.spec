@@ -8,12 +8,13 @@ version = 0.1
 requirements = python3,pygame
 orientation = landscape
 fullscreen = 1
-android.archs = arm64-v8a
 
-# Фикс ошибки с лицензиями и версией build-tools
+# Исправленные архитектуры и версии API под новые требования Google
+android.archs = arm64-v8a, armeabi-v7a
+android.api = 34
+android.minapi = 24
+android.ndk = 26b
 android.accept_sdk_license = True
-android.build_tools_version = 33.0.0
-android.ndk_api = 21
 
 [buildozer]
 log_level = 2
