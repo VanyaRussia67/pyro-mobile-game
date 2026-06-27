@@ -6,18 +6,15 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas,wav,mp3,ogg
 version = 0.1
 
-# Фиксируем стабильную комбинацию версий для работы Pygame на Android
-requirements = python3==3.11.1, pygame==2.6.0, jnius
+# Используем чистый pygame (сборщик выберет совместимый релиз сам)
+requirements = python3,pygame
 
 orientation = landscape
 fullscreen = 1
-
 android.archs = arm64-v8a
-android.api = 33
-android.minapi = 24
-android.accept_sdk_license = True
 
 [buildozer]
 log_level = 2
 warn_on_root = 1
+
 
